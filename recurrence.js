@@ -126,12 +126,9 @@ function formatRoutes(routerArr){
     let obj = {};			
     routerArr.forEach(router => {		
         const tmp = { ...router };
-//只筛选出type=1的项
             if (tmp.children) {
                 tmp.children = formatRoutes(tmp.children);
-
                 const {id, children, name,value} = router;
-
                 obj = {
                     id: tmp.id,
                     name: `(${tmp.value})${tmp.name}`,

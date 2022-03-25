@@ -136,7 +136,13 @@ function formatRoutes(routerArr){
                     children: tmp.children
                 }						
             }else{
-                return []
+                //这里添加一个没有子项的数据的判断
+                obj = {
+                    id: tmp.id,
+                    name: `(${tmp.value})${tmp.name}`,
+                    value:tmp.value,
+                    children: tmp.children?tmp.children:[]
+                }						
             }
             arr.push(obj);
         
